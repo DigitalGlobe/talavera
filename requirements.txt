@@ -1,0 +1,9 @@
+boto
+requests
+protobuf
+mercantile
+shapely==1.6b4
+pyproj
+mapbox-vector-tile
+gbdxtools
+boto3

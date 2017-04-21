@@ -1,0 +1,4 @@
+dist.zip
+build
+*.pyc
+.eggs
