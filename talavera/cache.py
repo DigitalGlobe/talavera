@@ -64,7 +64,7 @@ def tilemap(query, zoom=15, lon=151.25023462361236, lat=-33.864604097323536, ext
     js = Template("""
         require.config({
           paths: {
-              mapboxgl: 'https://api.tiles.mapbox.com/mapbox-gl-js/v0.34.0/mapbox-gl',
+              mapboxgl: 'https://api.tiles.mapbox.com/mapbox-gl-js/v0.28.0/mapbox-gl',
           }
         });
 
@@ -87,18 +87,21 @@ def tilemap(query, zoom=15, lon=151.25023462361236, lat=-33.864604097323536, ext
                         });
                         
                         var extrude = "$extrude";
+                        console.log("EXTRUDE", extrude)
                         if ( extrude === "") {
+                            console.log("YO")
                             var layer =  {
                                 "id": "gbdx",
                                 "type": "fill",
                                 "source": "tiles",
                                 "source-layer": "gbdx",
                                 "paint": {
-                                   "fill-color": '#0088CC',
-                                   "fill-opacity": .25
+                                   "fill-color": '#5588de',
+                                   "fill-opacity": .5
                                 }
                             };
                         } else {
+                            console.log('WHY23')
                             var layer =  {
                                 "id": "gbdx",
                                 "type": "fill-extrusion",
@@ -106,14 +109,18 @@ def tilemap(query, zoom=15, lon=151.25023462361236, lat=-33.864604097323536, ext
                                 "source-layer": "gbdx",
                                 "paint": {
                                   'fill-extrusion-height': {
-                                          property: extrude,
-                                          type: 'exponential',
-                                          stops: [
-                                            [1, 2],
-                                            [50, 4],
-                                            [500, 10]
-                                          ]
-                                        },
+                                    property: extrude,
+                                    type: 'exponential',
+                                    stops: [
+                                      [1, 2],
+                                      [50, 4],
+                                      [500, 10]
+                                    ]
+                                  },
+                                  /*'fill-extrusion-height': {
+                                    'type': 'identity',
+                                    'property': 'HEIGHT_dbl'
+                                  },*/
                                   'fill-extrusion-opacity': 0.6,
                                   'fill-extrusion-base': 0,
                                   "fill-extrusion-color": '#5588de',

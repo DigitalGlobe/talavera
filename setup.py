@@ -18,7 +18,7 @@ setup(name='talavera',
                         'boto3',
                         'shapely',
                         'pyproj',
-                        'mapbox-vector-tiles',
+                        'mapbox-vector-tile',
                         'mercantile',
                         'gbdxtools'
                         ]
