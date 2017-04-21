@@ -1,6 +1,6 @@
 # Talavera
 
-![talavera tiles](http://www.lafuente.com/images/alternate/til217a.jpg "Pretty Tiles")
+![talavera tiles](http://www.lafuente.com/images/alternate/til217a.jpg =200px)
 
 A python tiling utility for GBDX Vector Services. 
 
